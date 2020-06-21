@@ -40,8 +40,8 @@ function dumpTag(uid,pad,index){
 	}
 
 	async.eachLimit(tasks,5,worker,function(){
-		toypad.color(pad,'#FFFF00')
-		fs.writeFile('dumps/'+uid.toString('hex').toUpperCase()+'.bin',b)
+		toypad.color(pad, '#FFFF00')
+		fs.writeFileSync('dumps/'+uid.toString('hex').toUpperCase()+'.bin',b)
 		console.log('Finished dump for',uid.toString('hex'))
 		toypad.fade(pad,5,1,'#00FF00')
 		// toypad.color(pad,'#00FF00')
